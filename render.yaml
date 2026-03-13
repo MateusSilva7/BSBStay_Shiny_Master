@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: bsbstay-app-public
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: APP_MODE
+        value: public
+      - key: DRIVE_FILE_ID
+        value: 1fnereY6JOrAbSl1yw_o_U94Fb0KTuHGJU85GEUrCBiU
+      - key: DRIVE_FOLDER_ID
+        value: 1753AZxwmyyWYS2oYQPLeMHIz5gM8bscb
+      - key: MAX_CACHE_AGE_H
+        value: 6
+
+  - type: web
+    name: bsbstay-app-master
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: APP_MODE
+        value: master
+      - key: DRIVE_FILE_ID
+        value: 1fnereY6JOrAbSl1yw_o_U94Fb0KTuHGJU85GEUrCBiU
+      - key: DRIVE_FOLDER_ID
+        value: 1753AZxwmyyWYS2oYQPLeMHIz5gM8bscb
+      - key: MAX_CACHE_AGE_H
+        value: 6
